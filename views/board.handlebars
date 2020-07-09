@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>My Planner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="/css/board.css" rel="stylesheet" />
+  <link href="/css/header-footer.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="header">
+    <a href="#default" class="logo">{{boardName}}</a>
+    <div class="header-right">
+      <a href="/board/board_list">Home</a>
+      <a href="/board/about">About</a>
+      <a href="/logout">Logout</a>
+    </div>
+  </div>
+
+  <div id="listModal" class="modal modal-list">
+    <div class="modal-content">
+      <h5>New list name</h5>
+      <input type="text" id="listName" autofocus />
+    </div>
+    <div class="modal-list-footer">
+      <button id="submitListName" class="modal-close waves-effect white-text teal lighten-2 btn-flat">
+        <i class="material-icons right">send</i>Create
+      </button>
+    </div>
+  </div>
+
+  <div id="editTaskModal" class="modal modal-task">
+    <div class="modal-content">
+      <div class="row">
+        <div class="col s11">
+          <input type="text" id="task" readonly="readonly" />
+        </div>
+        <div class="col s1">
+          <a href="#" id="archive" class="black-text"><i class="material-icons right"
+              title="Archive Task">archive</i></a>
+        </div>
+      </div>
+      <label>Description</label>
+      <textarea class="modal-textarea" id="tArea"></textarea>
+      <label>Created By</label>
+      <input type="text" id="createdBy" />
+      <label>Assigned To</label>
+      <input type="text" id="assignedTo" required="" />
+      <label>Status</label>
+      <div class="input-field col s12">
+        <select id="status">
+          <option value="" disabled selected>Choose your option</option>
+          <option value="To Do">To Do</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Under Review">Under Review </option>
+          <option value="Done">Done</option>
+        </select>
+      </div>
+      <label>Completion Date</label>
+      <input type="date" id="completeDate" />
+      <label>Task History</label>
+      <div class="" id="taskHistory">
+        <ul id="taskHistoryUL"></ul>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button id="submitTaskDetails" class="modal-close waves-effect waves-green white-text teal lighten-2 btn-flat">
+        Save
+      </button>
+    </div>
+  </div>
+
+  <div id="taskModal" class="modal">
+    <div class="modal-content">
+      <h5>New Task</h5>
+      <label>Task Name</label>
+      <input type="text" id="taskName" />
+    </div>
+    <div class="modal-footer">
+      <a id="submitTaskName" class="modal-close waves-effect waves-green teal lighten-2 btn-flat">Create</a>
+    </div>
+  </div>
+  <div id="addIcon">
+    <div class="addList">
+      <a href="#!" data-target="listModal" class="btn modal-trigger btn-floating btn-medium scale-transition scale-in"
+        title="Add new list"><i class="material-icons">add</i></a>
+      <a href="#!" data-target="slide-out"
+        class="sidenav-trigger btn btn-floating btn-medium scale-transition scale-in right" title="Show Archived task"
+        id="archiveTask"><i class="material-icons right">archive</i></a>
+    </div>
+  </div>
+
+  <div class="board-layout">
+    <div class="board">
+      <div id="addIcon">
+      </div>
+      <div class="board-lists" id="boardlists"></div>
+    </div>
+  </div>
+
+  <ul id="slide-out" class="sidenav">
+    <li>
+      <a href="#!"><i class="material-icons">archive</i>Archived Task</a>
+    </li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <ul class="subheader" id="archivedTaskNames" type="disc"></ul>
+  </ul>
+  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  <footer>
+    <p>
+      © 2020 All rights reserved
+    </p>
+  </footer>
+</body>
+
+<script src="/js/board.js"></script>
+
+</html>
