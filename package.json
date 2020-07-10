@@ -1,12 +1,13 @@
 {
   "name": "shreya",
   "version": "1.0.0",
-  "description": "",
+  "description": "my planner",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
-  "author": "",
+  "author": "shreya",
   "license": "ISC",
   "dependencies": {
     "async": "^3.2.0",
@@ -17,5 +18,14 @@
     "express-handlebars": "^4.0.4",
     "express-session": "^1.17.1",
     "mongoose": "^5.9.21"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sher-11/My-Planner-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sher-11/My-Planner-app/issues"
+  },
+  "homepage": "https://github.com/sher-11/My-Planner-app#readme"
 }
