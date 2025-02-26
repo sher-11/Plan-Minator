@@ -1,5 +1,5 @@
 
-My Planner app is a prototype of trello app. It has its own authentication module which helps the user to sign up and further authenticate him/her on log in. That means in order to use My planner app, user need to signup and then login using the credentials which will route him/her to the home page of the app, from where the boards can be accessed.
+Task Minator is a prototype of trello app. It has its own authentication module which helps the user to sign up and further authenticate him/her on log in. That means in order to use Task Minator, user need to signup and then login using the credentials which will route him/her to the home page of the app, from where the boards can be accessed.
 
 As soon as the user logs in he/she is routed to the home page of the app which consists of two sections: Your boards and Shared boards. On user login, the app checks if a board is already created by the user,if not, it prompts the user to create a board to help him/her to get started. While creating a board, the user gets the option to create a personal board or a shared board as per convinience.
 
